@@ -1,0 +1,74 @@
+http://localhost/Appointment/index.php
+http://localhost/Appointment/admin/index.php
+
+<?php
+$servername = "sql305.infinityfree.com";
+$username = "if0_37027562";
+$password = "dRXaKMbVllqVeE";
+$dbname = "if0_37027562_veterans_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+-------------------------------------$_COOKIE<?php
+// Database connection details
+include '../function/db_connect.php';
+
+// Create connection
+$conn = new mysqli($hostname, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the form data
+$client_name = htmlspecialchars($_POST['client_name']);
+$address = htmlspecialchars($_POST['address']);
+$cell_number = htmlspecialchars($_POST['cell_number']);
+$email = htmlspecialchars($_POST['email']);
+$technician = htmlspecialchars($_POST['technician']);
+$date = htmlspecialchars($_POST['appointment_date']);
+$time = htmlspecialchars($_POST['time_slot']); // Added time field
+$type_animal = htmlspecialchars($_POST['type_animal']);
+$services = htmlspecialchars($_POST['services']);
+$request = htmlspecialchars($_POST['request']);
+
+// Prepare the SQL statement
+$stmt = $conn->prepare("INSERT INTO appointments (client_name, address, cell_number, email, technician, appointment_date, time_slot, type_animal, services, request) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssssss", $client_name, $address, $cell_number, $email, $technician, $date, $time, $type_animal, $services, $request);
+
+// Execute the statement and check for success
+if ($stmt->execute()) {
+    // Appointment saved to database
+    echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">';
+    echo '<div class="container mt-5 text-center">';
+    echo '<div class="alert alert-success" role="alert">';
+    echo '<h4 class="alert-heading">Appointment details saved!</h4>';
+    echo '<p>Redirecting to the Appointment page...</p>';
+    echo '</div>';
+    echo '</div>';
+    header("refresh:2;url=../php/apoint.php"); // Redirect to appointment page
+    exit();
+} else {
+    // Error saving appointment
+    echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">';
+    echo '<div class="container mt-5 text-center">';
+    echo '<div class="alert alert-danger" role="alert">';
+    echo '<h4 class="alert-heading">Error!</h4>';
+    echo '<p>' . htmlspecialchars($stmt->error) . '</p>';
+    echo '</div>';
+    echo '</div>';
+}
+
+// Close the statement and connection
+$stmt->close();
+$conn->close();
+?>
+
+&nbps;

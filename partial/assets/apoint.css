@@ -1,0 +1,320 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #043765;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;   
+}
+.sidebar .title{
+    color: rgba(255, 255, 255, 0.541);
+    font-size: 12px;
+}
+.sidebar h1{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    margin-left: 12px;
+    margin-top: 11px;
+}
+.sidebar.hide {
+    transform: translateX(-100%);
+}
+.header {
+    width: 100%;
+    height: 50px;
+    background: #D01B0D;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.menu-bar {
+    font-size: 24px;
+    cursor: pointer;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 50px;
+}
+.horiz {
+    margin: 10px 0;
+    border: 1px solid #fff;
+}
+.title {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.menu-item {
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+.menu-item i {
+    margin-right: 10px;
+}
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+.close {
+    color: #aaa;
+    margin-left: 95%;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content h2 {
+    margin-top: 0;
+}
+.modal-content hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="date"],
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.modal-content input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.modal-content input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.modal-content i {
+    margin-right: 5px;
+}
+/* --------------------alert css-------------- */
+/* Custom Alert CSS */
+.custom-alert {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  }
+  
+  .custom-alert-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 0; /* Remove default padding */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s;
+  }
+  
+  .custom-alert-header {
+    background-color: #043765; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #888;
+  }
+  
+  .custom-alert-body {
+    padding: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-right: -10px;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* CALENDAR STYLE */
+  .div_calendar {
+    width: 100%;
+    background-color: lavender;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc; /* Add a box outline */
+}
+
+#calendar {
+    background-color: lavender;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc; /* Add a box outline */
+}
+
+/* box 1 and 2 */
+/* .div_calendar {
+    background-color: lavender;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+#calendar {
+    background-color: lavender;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+} */
+
+/* .box1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc;
+    width: 25%;
+}
+
+.box1 h3 {
+    margin-top: 0;
+}
+
+.box1 div {
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.box1 div:nth-child(3) {
+    background-color: rgb(16, 0, 165);
+    color: white;
+}
+
+.box1 div:nth-child(4) {
+    background-color: rgb(255, 166, 0);
+    color: white;
+}
+
+.box1 div:nth-child(5) {
+    background-color: rgb(212, 0, 0);
+    color: white;
+} */
+
+.box2 {
+    margin-top: 20px;
+}
+
+.box2 h3 {
+    margin-top: 0;
+}
+
+.box2 hr {
+    margin: 10px 0;
+}
+
+.box2 option {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.holiday-item {
+    background-color: rgb(11, 92, 21);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.codes{
+    background-color: rgba(255, 255, 255, 0.822);
+}

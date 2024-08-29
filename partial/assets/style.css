@@ -1,0 +1,150 @@
+/* Custom Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url('./image/citizine.png'); /* Update image path as necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: rgba(52, 58, 64, 0.8);
+   
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-left: 20px;
+}
+.navbar-brand span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 10px;
+}
+.navbar a {
+    color: rgb(0, 0, 0);
+    margin-left: 15px;
+    background-color: transparent; /* Removes the background color */
+    border: none; /* Removes the border */
+}
+
+.container {
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+
+.container h1 {
+    font-weight: lighter;
+    color: #000000;
+    margin-bottom: 30px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.container p {
+    font-weight: lighter;
+    color: #000000;
+    font-size: 2px;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}
+
+.auth-buttons {
+    margin-top: 30px;
+}
+
+.auth-buttons .btn {
+    margin: 10px;
+}
+
+/* Modals */
+.modal{
+    margin-top: 70px;
+}
+.modal-content {
+    padding: 10px;
+}
+
+.modal-title {
+    margin-bottom: 20px;
+}
+
+.modal-body .form-label {
+    margin-top: 5px;
+}
+
+.modal-body .form-control {
+    margin-bottom: 5px;
+}
+/* btn1 */
+.modal-content .btn-primary1 {
+    background-color: #0069d9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px; 
+}
+.modal-content .btn-primary1:hover {
+    background-color: #6c7a88;
+}
+.modal-body .btn-primary1 {
+    background-color: #0069d9;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 87px;
+}
+/* btn2 */
+.modal-body .btn-primary {
+    background-color: #0069d9;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+
+}
+.modal-body .btn-primary:hover {
+    background-color: #6c7a88;
+}
+
+/* responsiv btn2 */
+@media (max-width: 768px) {
+    .modal-body .btn-primary {
+        margin-left: 77%;
+        margin-top: 1px;
+    }
+    .modal-body .btn-primary1 {
+        margin-left: 79%;
+        margin-top: 1px;
+    }
+    .modal{
+        margin-top: 20px;
+    }
+}
+/* Main Content */
+.container h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1, h5 {
+    color: #343a40;
+}
